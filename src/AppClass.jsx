@@ -1,6 +1,7 @@
+import React from 'react';
 import { Component } from "react";
 import "./App.css"
-import elephant from "./images/elephant.jpeg";
+import elephant from "../src/images/elephant.jpeg";
 
 export default class AppClass extends Component{
   
@@ -26,5 +27,23 @@ export default class AppClass extends Component{
     return data;
   }
 
-  // code here
+ 
+
+ // code here
+ render(){
+  const imgData = this.imageData();
+  return(
+    <>
+      <div>
+      {imgData.map((item) => {
+        return <img src={item.img} alt={item.id} key={item.id} />
+      })}
+      </div>
+
+    </>
+  )
 }
+}
+
+
+// export default AppClass
